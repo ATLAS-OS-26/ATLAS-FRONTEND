@@ -1,143 +1,129 @@
-/* ======================================================
-   ATLAS OS - Login Page Styles
-====================================================== */
+/* --- تصميم صفحة الدخول المتجاوب (Mobile Responsive) --- */
 
-/* إعدادات الخلفية العامة (نفس الشبكة الفاخرة) */
-body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
+:root {
+    --bg-primary: #040b17;
+    --bg-secondary: #111827;
+    --text-primary: #ffffff;
+    --text-secondary: #9ca3af;
+    --accent-color: #d4af37; /* اللون الذهبي */
+}
+
+body.atlas-body {
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
+    margin: 0;
     background-color: var(--bg-primary);
-    background-image: 
-        linear-gradient(rgba(212, 175, 55, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(212, 175, 55, 0.03) 1px, transparent 1px);
-    background-size: 50px 50px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    position: relative;
-    overflow: hidden;
+    font-family: system-ui, -apple-system, sans-serif;
+    direction: rtl; /* لغة عربية من اليمين لليسار */
 }
 
-/* الهالة الضوئية في الخلفية */
-.background-glow {
-    position: absolute;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(30,107,255,0.08) 0%, rgba(4,11,23,0) 70%);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 0;
-}
-
-/* البطاقة الزجاجية */
 .login-container {
-    background: rgba(10, 20, 37, 0.6);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(212, 175, 55, 0.15);
-    border-radius: 20px;
+    background-color: var(--bg-secondary);
     padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
     width: 100%;
-    max-width: 400px;
-    box-shadow: var(--shadow-soft);
-    z-index: 1;
+    max-width: 400px; /* الحجم الأقصى للكمبيوتر */
+    border: 1px solid rgba(184, 194, 211, 0.1);
+    box-sizing: border-box;
+    margin: 20px; /* هامش بسيط عشان ما يلزقش في الشاشة في الموبايل */
 }
 
-/* رأس البطاقة */
-.login-header {
-    text-align: center;
+/* --- تضبيط الشاشات الصغيرة (Mobile First) --- */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 30px 20px; /* تقليل البادينج في الموبايل */
+        margin: 15px;
+        border-radius: 10px;
+    }
+
+    h2 {
+        font-size: 24px !important;
+        margin-bottom: 10px !important;
+    }
+
+    h3 {
+        font-size: 14px !important;
+        margin-bottom: 20px !important;
+    }
+
+    .input-group label {
+        font-size: 12px !important;
+        margin-bottom: 5px !important;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+        padding: 12px !important;
+        font-size: 14px !important;
+    }
+
+    .login-btn {
+        padding: 12px !important;
+        font-size: 14px !important;
+    }
+}
+
+/* --- باقي التنسيقات الأساسية (لو مش موجودة في ملفاتك التانية) --- */
+h2, h3 {
+    margin: 0;
+    font-weight: 600;
+}
+
+h2 {
+    color: var(--text-primary);
+    font-size: 28px;
+}
+
+h3 {
+    color: var(--text-secondary);
+    font-size: 16px;
     margin-bottom: 30px;
 }
 
-.brand-text {
-    font-size: 32px;
-    color: var(--text-primary);
-    margin: 0 0 5px 0;
-    letter-spacing: 2px;
-}
-
-.subtitle {
-    font-size: 14px;
-    color: var(--text-secondary);
-    margin: 0;
-}
-
-/* تنسيق الحقول */
 .input-group {
     margin-bottom: 20px;
     text-align: right;
 }
 
 .input-group label {
+    color: var(--text-secondary);
+    font-size: 13px;
     display: block;
-    color: var(--text-secondary);
-    font-size: 12px;
-    margin-bottom: 8px;
 }
 
-.input-group input {
+input {
     width: 100%;
-    box-sizing: border-box;
-    padding: 12px 15px;
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid rgba(184, 194, 211, 0.1);
     background: rgba(4, 11, 23, 0.8);
-    border: 1px solid rgba(184, 194, 211, 0.2);
-    border-radius: 10px;
-    color: var(--text-primary);
-    font-size: 14px;
-    transition: all 0.3s ease;
-}
-
-.input-group input:focus {
+    color: #fff;
+    box-sizing: border-box; /* مهم جداً عشان البادينج ما يكسرش الحجم */
     outline: none;
-    border-color: var(--atlas-gold);
-    box-shadow: 0 0 10px rgba(212, 175, 55, 0.1);
+    font-size: 15px;
 }
 
-/* خيارات تذكرني وكلمة المرور */
-.form-actions {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 25px;
-    font-size: 12px;
+input:focus {
+    border-color: var(--accent-color);
 }
 
-.remember-me {
-    color: var(--text-secondary);
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.forgot-password {
-    color: var(--atlas-gold);
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.forgot-password:hover {
-    color: #FFF;
-}
-
-/* زر الدخول */
 .login-btn {
     width: 100%;
     padding: 14px;
-    background: var(--atlas-blue);
-    color: #FFF;
+    background-color: var(--accent-color);
+    color: #000;
     border: none;
-    border-radius: 10px;
-    font-size: 16px;
+    border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
-    transition: all 0.3s ease;
+    font-size: 15px;
+    transition: background-color 0.2s;
 }
 
 .login-btn:hover {
-    background: var(--atlas-blue-light);
-    box-shadow: var(--shadow-soft);
-    transform: translateY(-2px);
+    background-color: #bfa02e;
 }
