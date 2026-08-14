@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATLAS AI - نظام الذكاء الاصطناعي</title>
+    
+    <!-- ربط ملفات الـ CSS -->
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/pages/ai-agents.css">
+</head>
+<body class="atlas-body">
+
+    <div class="app-layout">
+
+        <!-- القائمة الجانبية -->
+     <!-- القائمة الجانبية الثابتة -->
+        <aside class="sidebar">
+            <div class="sidebar-header" style="padding-top: 20px;">
+                <!-- الضغط على الشعار يوديك للواجهة الرئيسية (لوحة التحكم) -->
+                <a href="index.html" style="display: block; text-align: center;">
+                    <img src="assets/images/atlas-logo.png" alt="ATLAS Logo" style="max-width: 120px; height: auto; margin: 0 auto; display: block;">
+                </a>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item">لوحة التحكم</a>
+                <a href="crm.html" class="nav-item">إدارة العملاء</a>
+                <a href="bookings.html" class="nav-item">الحجوزات والعمليات</a>
+                <a href="finance.html" class="nav-item">المالية والحسابات</a>
+                <a href="ai-agents.html" class="nav-item">ATLAS AI</a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <small>ATLAS OS · v1.0</small>
+            </div>
+        </aside>
+
+        <!-- المحتوى الرئيسي -->
+        <main class="main-content">
+            
+            <!-- الشريط العلوي -->
+            <header class="topbar">
+                <div class="topbar-search">
+                    <input type="text" placeholder="ابحث في سجل محادثات الـ AI...">
+                </div>
+                <div class="topbar-user">
+                    <span>مدير النظام</span>
+                </div>
+            </header>
+
+            <!-- مساحة العمل الخاصة بـ ATLAS AI -->
+            <div class="workspace">
+                
+                <div class="page-header">
+                    <div class="page-title">
+                        <h1>عقل النظام - ATLAS AI 🤖</h1>
+                        <p>إدارة وكلاء الذكاء الاصطناعي، أتمتة الردود، وحملات الواتساب الذكية.</p>
+                    </div>
+                    <button class="btn-primary">+ تفعيل وكيل جديد</button>
+                </div>
+
+                <!-- كروت حالة الوكلاء -->
+                <div class="ai-agents-grid">
+                    
+                    <!-- وكيل خدمة العملاء والحجوزات -->
+                    <div class="agent-card">
+                        <div class="agent-header">
+                            <span class="agent-icon">✈️</span>
+                            <span class="status-badge active">متصل وفعال</span>
+                        </div>
+                        <h3>مساعد حجز الطيران (Blue Orange Bot)</h3>
+                        <p>يتولى الرد على استفسارات أسعار التذاكر، مقارنة الرحلات، وإرسال الروابط للعملاء تلقائياً عبر الواتساب.</p>
+                        <div class="agent-footer">
+                            <small>الرسائل المعالجة اليوم: <strong>142 رسالة</strong></small>
+                            <a href="#" class="action-link">إعدادات الوكيل</a>
+                        </div>
+                    </div>
+
+                    <!-- وكيل التأشيرات والمتابعة -->
+                    <div class="agent-card">
+                        <div class="agent-header">
+                            <span class="agent-icon">🛂</span>
+                            <span class="status-badge active">متصل وفعال</span>
+                        </div>
+                        <h3>منسق التأشيرات والمستندات</h3>
+                        <p>يتحقق من استلام جوازات السفر والصور، ويرسل تنبيهات تلقائية لمواعيد حالة التأشيرة للعملاء.</p>
+                        <div class="agent-footer">
+                            <small>الرسائل المعالجة اليوم: <strong>38 رسالة</strong></small>
+                            <a href="#" class="action-link">إعدادات الوكيل</a>
+                        </div>
+                    </div>
+
+                    <!-- وكيل الحملات والتسويق -->
+                    <div class="agent-card">
+                        <div class="agent-header">
+                            <span class="agent-icon">🎯</span>
+                            <span class="status-badge warning">وضع الاستعداد</span>
+                        </div>
+                        <h3>مسؤول حملات الواتساب (Marketing)</h3>
+                        <p>مخصص لإرسال عروض السفر والعطلات الموسمية للمجموعات والعملاء المستهدفين بناءً على الاهتمامات.</p>
+                        <div class="agent-footer">
+                            <small>الحملة القادمة: <strong>عروض العيد</strong></small>
+                            <a href="#" class="action-link">إعدادات الوكيل</a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- قسم سجل التفاعلات المباشرة مع الـ AI -->
+                <div class="table-container" style="margin-top: 30px;">
+                    <div class="table-header-flex">
+                        <h3>آخر محادثات الأتمتة المباشرة</h3>
+                        <span class="live-indicator"><span class="pulse-dot"></span> متصل بـ n8n & WhatsApp</span>
+                    </div>
+
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>الوقت</th>
+                                <th>العميل</th>
+                                <th>الوكيل المسؤول</th>
+                                <th>ملخص الطلب</th>
+                                <th>الحالة</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="date-text">منذ 3 دقائق</td>
+                                <td><strong>علي عبد الرؤوف</strong></td>
+                                <td>مساعد حجز الطيران</td>
+                                <td>استفسار عن رحلة القاهرة - دبي (تاريخ 15 أغسطس)</td>
+                                <td><span class="status-badge success">تم الرد تلقائياً</span></td>
+                            </tr>
+                            <tr>
+                                <td class="date-text">منذ 25 دقيقة</td>
+                                <td><strong>إيلاف محمد</strong></td>
+                                <td>منسق التأشيرات</td>
+                                <td>إرسال صورة جواز السفر لطلب تأشيرة دبي</td>
+                                <td><span class="status-badge success">تم تحويل الملف للموظف</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

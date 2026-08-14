@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم - ATLAS OS</title>
+    
+    <!-- ربط ملفات الـ CSS -->
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/pages/dashboard.css">
+</head>
+<body class="atlas-body">
+
+    <div class="app-layout">
+
+        <!-- 1. القائمة الجانبية -->
+        <aside class="sidebar">
+            <div class="sidebar-header" style="padding-top: 20px;">
+                <a href="dashboard.html" style="display: block; text-align: center; text-decoration: none;">
+                    <img src="assets/images/atlas-logo.png" alt="ATLAS Logo" style="max-width: 120px; height: auto; margin: 0 auto; display: block;" onerror="this.outerHTML='<h2 class=\'sidebar-brand\' style=\'color:var(--text-primary);margin:0 0 5px;font-size:24px;letter-spacing:2px;\'>ATLAS</h2><span class=\'sidebar-subtitle\' style=\'color:var(--atlas-gold);font-size:12px;\'>Aerix Travel</span>'">
+                </a>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item active">لوحة التحكم</a>
+                <a href="crm.html" class="nav-item">إدارة العملاء</a>
+                <a href="bookings.html" class="nav-item">الحجوزات والعمليات</a>
+                <a href="finance.html" class="nav-item">المالية والحسابات</a>
+                <a href="ai-agents.html" class="nav-item">ATLAS AI</a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <small>ATLAS OS · v1.0</small>
+            </div>
+        </aside>
+
+        <!-- 2. المحتوى الرئيسي -->
+        <main class="main-content">
+            
+            <!-- الشريط العلوي -->
+            <header class="topbar">
+                <div class="topbar-search">
+                    <input type="text" placeholder="ابحث في ATLAS...">
+                </div>
+                <div class="topbar-user">
+                    <span>مدير النظام</span>
+                </div>
+            </header>
+
+            <!-- مساحة العمل الخاصة بلوحة التحكم -->
+            <div class="workspace">
+                
+                <!-- قسم الترحيب (Hero) -->
+                <section class="dashboard-hero">
+                    <div class="hero-content">
+                        <span class="hero-label">ATLAS OS · OPERATIONS CENTER</span>
+                        <h1>مرحبًا بك في مركز العمليات</h1>
+                        <p>إدارة عمليات وكالتك، عملائك، حجوزاتك وبياناتك من منصة واحدة.</p>
+                    </div>
+                    <div class="hero-status">
+                        <span class="hero-status-dot"></span>
+                        <div>
+                            <strong>النظام يعمل</strong>
+                            <small>جميع الخدمات متاحة</small>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- قسم الإحصائيات (KPIs) -->
+                <section class="kpi-grid">
+                    <div class="kpi-card">
+                        <span class="kpi-label">إجمالي العملاء</span>
+                        <strong class="kpi-value">248</strong>
+                        <span class="kpi-meta">+12 هذا الشهر</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-label">الحجوزات النشطة</span>
+                        <strong class="kpi-value">36</strong>
+                        <span class="kpi-meta">8 تحتاج متابعة</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-label">العمليات اليوم</span>
+                        <strong class="kpi-value">17</strong>
+                        <span class="kpi-meta">5 مكتملة</span>
+                    </div>
+                    <div class="kpi-card">
+                        <span class="kpi-label">الإيرادات</span>
+                        <strong class="kpi-value">84,500</strong>
+                        <span class="kpi-meta">جنيه مصري</span>
+                    </div>
+                </section>
+
+                <!-- قسم أحدث العمليات -->
+                <section class="recent-activities">
+                    <div class="section-header">
+                        <h2>أحدث العمليات</h2>
+                        <a href="#" class="view-all">عرض الكل</a>
+                    </div>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-details">
+                                <h4>حجز طيران جديد (Blue Orange)</h4>
+                                <p>العميل: أحمد إبراهيم - القاهرة إلى دبي</p>
+                            </div>
+                            <div class="activity-meta">
+                                <span class="status pending">قيد المراجعة</span>
+                                <span class="time">منذ 10 دقائق</span>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-details">
+                                <h4>استلام دفعة مالية</h4>
+                                <p>فاتورة #INV-2026-090 - علي عبد الرؤوف</p>
+                            </div>
+                            <div class="activity-meta">
+                                <span class="status success">مكتمل</span>
+                                <span class="time">منذ ساعتين</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

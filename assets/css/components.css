@@ -1,0 +1,101 @@
+/* ======================================================
+   ATLAS Frontend v1.0
+   Components
+====================================================== */
+
+
+/* ===== Logo ===== */
+
+.logo{
+
+    width:260px;
+
+    margin-bottom:35px;
+
+    user-select:none;
+
+}
+
+
+/* ===== Title ===== */
+
+h1{
+
+
+    font-size:64px;
+
+    font-weight:700;
+
+    letter-spacing:3px;
+
+    margin-bottom:10px;
+
+    color:var(--text-primary);
+
+}
+
+
+
+/* ===== Subtitle ===== */
+
+.subtitle{
+
+    font-size:22px;
+
+    color:var(--atlas-blue-light);
+
+    margin-bottom:40px;
+
+}
+
+
+
+/* ===== Loader ===== */
+
+.loader{
+
+    width:340px;
+
+    height:10px;
+
+    background:#182234;
+
+    border-radius:100px;
+
+    overflow:hidden;
+
+    box-shadow:var(--shadow-soft);
+
+}
+
+
+/* ===== Progress ===== */
+
+.progress{
+
+    width:40%;
+
+    height:100%;
+
+    border-radius:100px;
+
+    background:linear-gradient(
+        90deg,
+        var(--atlas-blue),
+        var(--atlas-gold)
+    );
+
+}
+
+
+/* ===== Loading Text ===== */
+
+.loading-text{
+
+    margin-top:22px;
+
+    font-size:18px;
+
+    color:var(--text-secondary);
+
+}

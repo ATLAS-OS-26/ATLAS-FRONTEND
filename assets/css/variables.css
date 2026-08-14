@@ -1,0 +1,29 @@
+/* ======================================================
+   ATLAS Design System
+   Variables v1.0
+====================================================== */
+
+:root{
+
+    /* Primary Colors */
+
+    --bg-primary:#040B17;
+    --bg-secondary:#0A1425;
+
+    /* Brand */
+
+    --atlas-blue:#1E6BFF;
+    --atlas-blue-light:#57A6FF;
+
+    --atlas-gold:#D4AF37;
+
+    /* Text */
+
+    --text-primary:#FFFFFF;
+    --text-secondary:#B8C2D3;
+
+    /* Shadows */
+
+    --shadow-soft:0 0 25px rgba(30,107,255,.25);
+
+}

@@ -1,0 +1,205 @@
+/* ======================================================
+   ATLAS OS - AI Agents & Automation Styles
+====================================================== */
+
+.workspace {
+    padding: 30px 40px;
+    width: 100%;
+    flex-grow: 1;
+    box-sizing: border-box;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.page-title h1 {
+    font-size: 28px;
+    margin: 0 0 5px 0;
+    color: var(--text-primary);
+}
+
+.page-title p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.btn-primary {
+    background-color: var(--atlas-gold);
+    color: #000;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #FFF;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+/* شبكة كروت الوكلاء */
+.ai-agents-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.agent-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid rgba(184, 194, 211, 0.1);
+    border-radius: 12px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.3s;
+    box-shadow: var(--shadow-soft);
+}
+
+.agent-card:hover {
+    border-color: rgba(30, 107, 255, 0.4);
+    transform: translateY(-3px);
+}
+
+.agent-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.agent-icon {
+    font-size: 28px;
+}
+
+.agent-card h3 {
+    color: var(--text-primary);
+    font-size: 18px;
+    margin: 0 0 10px 0;
+}
+
+.agent-card p {
+    color: var(--text-secondary);
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 0 0 20px 0;
+}
+
+.agent-footer {
+    border-top: 1px solid rgba(184, 194, 211, 0.05);
+    padding-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.agent-footer small {
+    color: var(--text-secondary);
+    font-size: 12px;
+}
+
+.action-link {
+    color: var(--atlas-blue-light);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.action-link:hover {
+    color: #FFF;
+    text-decoration: underline;
+}
+
+/* مؤشر الاتصال المباشر */
+.live-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #2ecc71;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #2ecc71;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(0.95); opacity: 0.8; }
+    50% { transform: scale(1.2); opacity: 1; }
+    100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+/* الجدول والتنسيقات المشتركة */
+.table-container {
+    background-color: var(--bg-secondary);
+    border-radius: 12px;
+    border: 1px solid rgba(184, 194, 211, 0.1);
+    overflow-x: auto;
+    width: 100%;
+    box-shadow: var(--shadow-soft);
+    padding: 20px;
+}
+
+.table-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.table-header-flex h3 {
+    margin: 0;
+    font-size: 18px;
+    color: var(--text-primary);
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: right;
+}
+
+.data-table th {
+    background-color: rgba(4, 11, 23, 0.5);
+    color: var(--text-secondary);
+    font-size: 13px;
+    padding: 15px;
+    border-bottom: 1px solid rgba(184, 194, 211, 0.1);
+}
+
+.data-table td {
+    padding: 15px;
+    border-bottom: 1px solid rgba(184, 194, 211, 0.05);
+    font-size: 14px;
+}
+
+.data-table tr:hover {
+    background-color: rgba(30, 107, 255, 0.05);
+}
+
+.date-text { color: var(--text-secondary); font-size: 13px; }
+
+.status-badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.status-badge.active { background-color: rgba(46, 204, 113, 0.1); color: #2ecc71; }
+.status-badge.warning { background-color: rgba(212, 175, 55, 0.1); color: var(--atlas-gold); }
+.status-badge.success { background-color: rgba(30, 107, 255, 0.1); color: var(--atlas-blue-light); }

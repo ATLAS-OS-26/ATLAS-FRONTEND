@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المالية والحسابات - ATLAS OS</title>
+    
+    <!-- ربط ملفات الـ CSS -->
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/pages/finance.css">
+</head>
+<body class="atlas-body">
+
+    <div class="app-layout">
+
+        <!-- القائمة الجانبية -->
+       <!-- القائمة الجانبية الثابتة -->
+        <aside class="sidebar">
+            <div class="sidebar-header" style="padding-top: 20px;">
+                <!-- الضغط على الشعار يوديك للواجهة الرئيسية (لوحة التحكم) -->
+                <a href="index.html" style="display: block; text-align: center;">
+                    <img src="assets/images/atlas-logo.png" alt="ATLAS Logo" style="max-width: 120px; height: auto; margin: 0 auto; display: block;">
+                </a>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item">لوحة التحكم</a>
+                <a href="crm.html" class="nav-item">إدارة العملاء</a>
+                <a href="bookings.html" class="nav-item">الحجوزات والعمليات</a>
+                <a href="finance.html" class="nav-item">المالية والحسابات</a>
+                <a href="ai-agents.html" class="nav-item">ATLAS AI</a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <small>ATLAS OS · v1.0</small>
+            </div>
+        </aside>
+
+        <!-- المحتوى الرئيسي -->
+        <main class="main-content">
+            
+            <!-- الشريط العلوي -->
+            <header class="topbar">
+                <div class="topbar-search">
+                    <input type="text" placeholder="ابحث برقم الفاتورة أو المعاملة...">
+                </div>
+                <div class="topbar-user">
+                    <span>مدير النظام</span>
+                </div>
+            </header>
+
+            <!-- مساحة العمل الخاصة بالمالية -->
+            <div class="workspace">
+                
+                <div class="page-header">
+                    <div class="page-title">
+                        <h1>المركز المالي والحسابات 💳</h1>
+                        <p>مراقبة الإيرادات، المدفوعات، وإدارة حسابات Blue Orange.</p>
+                    </div>
+                    <div class="header-actions">
+                        <button class="btn-secondary">تصدير التقرير</button>
+                        <button class="btn-primary">+ إصدار فاتورة جديدة</button>
+                    </div>
+                </div>
+
+                <!-- المؤشرات المالية (KPIs) -->
+                <div class="finance-stats">
+                    <div class="stat-card">
+                        <span>إيرادات الشهر الحالي</span>
+                        <strong>$142,500</strong>
+                        <span class="trend positive">+12% عن الشهر الماضي</span>
+                    </div>
+                    <div class="stat-card">
+                        <span>المصروفات والعمولات</span>
+                        <strong>$12,300</strong>
+                    </div>
+                    <div class="stat-card alert">
+                        <span>مستحقات Blue Orange</span>
+                        <strong>$4,850</strong>
+                        <span class="trend warning">واجبة السداد</span>
+                    </div>
+                    <div class="stat-card gold">
+                        <span>صافي الربح المتوقع</span>
+                        <strong>$18,400</strong>
+                        <span class="trend gold">هامش 12.9%</span>
+                    </div>
+                </div>
+
+                <!-- جدول الحركات المالية والفواتير -->
+                <div class="table-container">
+                    <div class="table-header-flex">
+                        <h3>سجل الحركات والفواتير الأخيرة</h3>
+                        <select class="filter-select">
+                            <option>كل الحركات</option>
+                            <option>مقبوضات</option>
+                            <option>مدفوعات</option>
+                        </select>
+                    </div>
+
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>التاريخ</th>
+                                <th>رقم الفاتورة</th>
+                                <th>البيان / العميل</th>
+                                <th>النوع</th>
+                                <th>المبلغ</th>
+                                <th>الحالة</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="date-text">29 يونيو 2026</td>
+                                <td class="pnr-text">INV-2026-089</td>
+                                <td><strong>تسوية تذاكر - Blue Orange</strong></td>
+                                <td><span class="text-rose">دفعة صادرة</span></td>
+                                <td class="amount-text">$1,200</td>
+                                <td><span class="status-badge success">مكتمل</span></td>
+                            </tr>
+                            <tr>
+                                <td class="date-text">29 يونيو 2026</td>
+                                <td class="pnr-text">INV-2026-090</td>
+                                <td><strong>علي عبد الرؤوف</strong></td>
+                                <td><span class="text-emerald">إيراد وارد</span></td>
+                                <td class="amount-text">$480</td>
+                                <td><span class="status-badge success">مدفوع</span></td>
+                            </tr>
+                            <tr>
+                                <td class="date-text">28 يونيو 2026</td>
+                                <td class="pnr-text">INV-2026-091</td>
+                                <td><strong>إيلاف محمد - تأشيرة</strong></td>
+                                <td><span class="text-emerald">إيراد وارد</span></td>
+                                <td class="amount-text">$210</td>
+                                <td><span class="status-badge warning">بانتظار التحويل</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

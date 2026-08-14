@@ -1,0 +1,80 @@
+/* ======================================================
+   ATLAS Frontend v1.0
+   Splash Screen
+======================================================*/
+
+
+/* الصفحة */
+
+.splash-container{
+
+    position:relative;
+
+}
+
+
+/* الخلفية */
+
+.background{
+
+    background:
+        radial-gradient(circle at top,
+        rgba(30,107,255,.18),
+        transparent 45%),
+
+        radial-gradient(circle at bottom right,
+        rgba(212,175,55,.08),
+        transparent 35%),
+
+        linear-gradient(
+        180deg,
+        #030813 0%,
+        #07111E 50%,
+        #04070F 100%);
+
+}/* ======================================================
+   تأثيرات الواجهة (الشبكة الذهبية والهالة الضوئية)
+====================================================== */
+
+/* 1. إضافة الشبكة الذهبية الشفافة في الخلفية */
+body {
+    background-color: var(--bg-primary);
+    background-image: 
+        linear-gradient(rgba(212, 175, 55, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212, 175, 55, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: center center;
+}
+
+/* 2. الهالة الضوئية والتوهج حول الشعار */
+.logo-container {
+    position: relative;
+    display: inline-block;
+    z-index: 1;
+}
+
+/* إنشاء الهالة الزرقاء خلف الشعار */
+.logo-container::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(30,107,255,0.15) 0%, rgba(4,11,23,0) 60%);
+    z-index: -1;
+    animation: pulseGlow 4s infinite alternate ease-in-out;
+}
+
+/* 3. حركة النبض الهادئة للهالة */
+@keyframes pulseGlow {
+    0% { 
+        transform: translate(-50%, -50%) scale(0.9); 
+        opacity: 0.6; 
+    }
+    100% { 
+        transform: translate(-50%, -50%) scale(1.1); 
+        opacity: 1; 
+    }
+}

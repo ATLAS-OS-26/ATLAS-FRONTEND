@@ -1,0 +1,146 @@
+/* ======================================================
+   ATLAS OS - CRM Page Styles
+====================================================== */
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+   .workspace {
+    padding: 30px 40px; /* تظبيط الهوامش الداخلية */
+    width: 100%;
+    flex-grow: 1;
+    box-sizing: border-box; /* لمنع خروج المحتوى عن الشاشة */
+
+}
+
+/* رأس الصفحة */
+.crm-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(184, 194, 211, 0.1);
+    padding-bottom: 20px;
+}
+
+.crm-title h1 {
+    font-size: 28px;
+    margin: 0 0 5px 0;
+    color: var(--text-primary);
+}
+
+.crm-title p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.btn-primary {
+    background-color: var(--atlas-gold);
+    color: #000;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #FFF;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+/* الفلترة والبحث */
+.crm-filters {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.search-input, .filter-select {
+    background-color: var(--bg-secondary);
+    border: 1px solid rgba(184, 194, 211, 0.2);
+    color: var(--text-primary);
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.search-input {
+    flex-grow: 1;
+}
+
+.search-input:focus, .filter-select:focus {
+    outline: none;
+    border-color: var(--atlas-blue-light);
+}
+
+/* جدول العملاء */
+.table-container {
+    background-color: var(--bg-secondary);
+    border-radius: 12px;
+    border: 1px solid rgba(184, 194, 211, 0.1);
+    overflow-x: auto;
+    width: 100%; /* إجبار الجدول على ملء المساحة */
+    box-shadow: var(--shadow-soft);
+}
+
+.crm-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: right;
+}
+
+.crm-table th {
+    background-color: rgba(4, 11, 23, 0.5);
+    color: var(--text-secondary);
+    font-size: 13px;
+    padding: 15px;
+    border-bottom: 1px solid rgba(184, 194, 211, 0.1);
+}
+
+.crm-table td {
+    padding: 15px;
+    border-bottom: 1px solid rgba(184, 194, 211, 0.05);
+    font-size: 14px;
+}
+
+.crm-table tr:hover {
+    background-color: rgba(30, 107, 255, 0.05);
+}
+
+/* حالات العملاء (Badges) */
+.status-badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.status-badge.active {
+    background-color: rgba(46, 204, 113, 0.1);
+    color: #2ecc71;
+}
+
+.status-badge.lead {
+    background-color: rgba(212, 175, 55, 0.1);
+    color: var(--atlas-gold);
+}
+
+/* رابط الإجراءات */
+.action-link {
+    color: var(--atlas-blue-light);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.action-link:hover {
+    text-decoration: underline;
+    color: #FFF;
+}

@@ -1,0 +1,193 @@
+/* ======================================================
+   ATLAS OS - Finance & Accounts Styles
+====================================================== */
+
+.workspace {
+    padding: 30px 40px;
+    width: 100%;
+    flex-grow: 1;
+    box-sizing: border-box;
+}
+
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.page-title h1 {
+    font-size: 28px;
+    margin: 0 0 5px 0;
+    color: var(--text-primary);
+}
+
+.page-title p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.header-actions {
+    display: flex;
+    gap: 12px;
+}
+
+.btn-primary {
+    background-color: var(--atlas-gold);
+    color: #000;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #FFF;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+.btn-secondary {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border: 1px solid rgba(184, 194, 211, 0.2);
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-secondary:hover {
+    border-color: var(--atlas-blue-light);
+}
+
+/* الكروت المالية */
+.finance-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background-color: var(--bg-secondary);
+    border: 1px solid rgba(184, 194, 211, 0.1);
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.stat-card span {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.stat-card strong {
+    font-size: 26px;
+    color: var(--text-primary);
+    font-family: monospace;
+}
+
+.trend {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.trend.positive { color: #2ecc71; }
+.trend.warning { color: var(--atlas-gold); }
+.trend.gold { color: var(--atlas-gold); }
+
+.stat-card.alert {
+    border-color: rgba(212, 175, 55, 0.3);
+}
+
+.stat-card.gold {
+    border-color: rgba(212, 175, 55, 0.4);
+    box-shadow: var(--shadow-soft);
+}
+
+/* الجدول وتنسيقاته */
+.table-container {
+    background-color: var(--bg-secondary);
+    border-radius: 12px;
+    border: 1px solid rgba(184, 194, 211, 0.1);
+    overflow-x: auto;
+    width: 100%;
+    box-shadow: var(--shadow-soft);
+    padding: 20px;
+}
+
+.table-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.table-header-flex h3 {
+    margin: 0;
+    font-size: 18px;
+    color: var(--text-primary);
+}
+
+.filter-select {
+    background-color: var(--bg-primary);
+    border: 1px solid rgba(184, 194, 211, 0.2);
+    color: var(--text-primary);
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: right;
+}
+
+.data-table th {
+    background-color: rgba(4, 11, 23, 0.5);
+    color: var(--text-secondary);
+    font-size: 13px;
+    padding: 15px;
+    border-bottom: 1px solid rgba(184, 194, 211, 0.1);
+}
+
+.data-table td {
+    padding: 15px;
+    border-bottom: 1px solid rgba(184, 194, 211, 0.05);
+    font-size: 14px;
+}
+
+.data-table tr:hover {
+    background-color: rgba(30, 107, 255, 0.05);
+}
+
+.date-text { color: var(--text-secondary); font-size: 13px; }
+.pnr-text { font-family: monospace; color: var(--atlas-blue-light); font-weight: bold; }
+.amount-text { font-family: monospace; font-weight: bold; font-size: 15px; }
+
+.text-rose { color: #e74c3c; font-weight: bold; font-size: 13px; }
+.text-emerald { color: #2ecc71; font-weight: bold; font-size: 13px; }
+
+.status-badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.status-badge.success {
+    background-color: rgba(46, 204, 113, 0.1);
+    color: #2ecc71;
+}
+
+.status-badge.warning {
+    background-color: rgba(212, 175, 55, 0.1);
+    color: var(--atlas-gold);
+}

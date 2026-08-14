@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الحجوزات والعمليات - ATLAS OS</title>
+    
+    <!-- ربط ملفات الـ CSS -->
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/pages/bookings.css">
+</head>
+<body class="atlas-body">
+
+    <div class="app-layout">
+
+        <!-- القائمة الجانبية -->
+       <!-- القائمة الجانبية الثابتة -->
+        <aside class="sidebar">
+            <div class="sidebar-header" style="padding-top: 20px;">
+                <!-- الضغط على الشعار يوديك للواجهة الرئيسية (لوحة التحكم) -->
+                <a href="index.html" style="display: block; text-align: center;">
+                    <img src="assets/images/atlas-logo.png" alt="ATLAS Logo" style="max-width: 120px; height: auto; margin: 0 auto; display: block;">
+                </a>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="dashboard.html" class="nav-item">لوحة التحكم</a>
+                <a href="crm.html" class="nav-item">إدارة العملاء</a>
+                <a href="bookings.html" class="nav-item">الحجوزات والعمليات</a>
+                <a href="finance.html" class="nav-item">المالية والحسابات</a>
+                <a href="ai-agents.html" class="nav-item">ATLAS AI</a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <small>ATLAS OS · v1.0</small>
+            </div>
+        </aside>
+        <!-- المحتوى الرئيسي -->
+        <main class="main-content">
+            
+            <!-- الشريط العلوي -->
+            <header class="topbar">
+                <div class="topbar-search">
+                    <input type="text" placeholder="ابحث برقم الـ PNR أو العميل...">
+                </div>
+                <div class="topbar-user">
+                    <span>مدير النظام</span>
+                </div>
+            </header>
+
+            <!-- مساحة العمل الخاصة بالحجوزات -->
+            <div class="workspace">
+                
+                <div class="page-header">
+                    <div class="page-title">
+                        <h1>الحجوزات والعمليات ✈️</h1>
+                        <p>متابعة التذاكر، التأشيرات، وإدارة حجوزات Blue Orange.</p>
+                    </div>
+                    <button class="btn-primary">+ حجز جديد</button>
+                </div>
+
+                <!-- إحصائيات سريعة للحجوزات -->
+                <div class="bookings-stats">
+                    <div class="stat-card">
+                        <span>تذاكر مُصدرة (اليوم)</span>
+                        <strong>12</strong>
+                    </div>
+                    <div class="stat-card">
+                        <span>تأشيرات قيد المعالجة</span>
+                        <strong>5</strong>
+                    </div>
+                    <div class="stat-card alert">
+                        <span>عمليات بانتظار الدفع</span>
+                        <strong>3</strong>
+                    </div>
+                </div>
+
+                <!-- تبويبات الفلترة (Tabs) -->
+                <div class="bookings-tabs">
+                    <button class="tab-btn active">الكل</button>
+                    <button class="tab-btn">طيران (Blue Orange)</button>
+                    <button class="tab-btn">تأشيرات</button>
+                    <button class="tab-btn">فنادق</button>
+                </div>
+
+                <!-- جدول الحجوزات -->
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>العميل</th>
+                                <th>نوع الخدمة</th>
+                                <th>المصدر / المرجع (PNR)</th>
+                                <th>تاريخ السفر</th>
+                                <th>الحالة</th>
+                                <th>إجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>تامر حسن</strong></td>
+                                <td>طيران ذهاب وعودة</td>
+                                <td class="pnr-text">Blue Orange - <span>XYZ123</span></td>
+                                <td>15 أغسطس 2026</td>
+                                <td><span class="status-badge success">تم الإصدار</span></td>
+                                <td><a href="#" class="action-link">التفاصيل</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>أمل</strong></td>
+                                <td>تأشيرة دخول (دبي)</td>
+                                <td class="pnr-text">نظام التأشيرات - <span>V-987</span></td>
+                                <td>-</td>
+                                <td><span class="status-badge pending">قيد المعالجة</span></td>
+                                <td><a href="#" class="action-link">التفاصيل</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>إيلاف محمد</strong></td>
+                                <td>طيران اتجاه واحد</td>
+                                <td class="pnr-text">Blue Orange - <span>ABC456</span></td>
+                                <td>22 أغسطس 2026</td>
+                                <td><span class="status-badge warning">بانتظار الدفع</span></td>
+                                <td><a href="#" class="action-link">التفاصيل</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>
