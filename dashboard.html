@@ -21,7 +21,11 @@
                     <img src="assets/images/atlas-logo.png" alt="ATLAS Logo" style="max-width: 120px; height: auto; margin: 0 auto; display: block;" onerror="this.outerHTML='<h2 class=\'sidebar-brand\' style=\'color:var(--text-primary);margin:0 0 5px;font-size:24px;letter-spacing:2px;\'>ATLAS</h2><span class=\'sidebar-subtitle\' style=\'color:var(--atlas-gold);font-size:12px;\'>Aerix Travel</span>'">
                 </a>
             </div>
-
+<!-- حاوية شعار الوكالة -->
+<div style="text-align: center; padding: 20px 10px; border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 20px;">
+    <img id="sidebarAgencyLogo" src="" alt="شعار الوكالة" style="max-width: 80%; height: auto; border-radius: 8px; display: none; margin: 0 auto;">
+    <h3 id="sidebarAgencyName" style="color: #fff; margin-top: 10px; font-size: 16px;">ATLAS OS</h3>
+</div>
             <nav class="sidebar-nav">
                 <a href="dashboard.html" class="nav-item active">لوحة التحكم</a>
                 <a href="crm.html" class="nav-item">إدارة العملاء</a>
@@ -124,6 +128,44 @@
             </div>
         </main>
     </div>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const logo = localStorage.getItem('atlas_agency_logo');
+        const name = localStorage.getItem('atlas_agency_name');
+        const c1 = localStorage.getItem('atlas_color_1');
+        const c2 = localStorage.getItem('atlas_color_2');
+        const c3 = localStorage.getItem('atlas_color_3');
 
+        // تطبيق الألوان الثلاثة على جذور النظام
+        if (c1) {
+            document.documentElement.style.setProperty('--accent-color', c1); // اللون الرئيسي (للأزرار والنصوص المهمة)
+            document.documentElement.style.setProperty('--theme-c1', c1); 
+        }
+        if (c2) {
+            document.documentElement.style.setProperty('--theme-c2', c2); // اللون الثاني (لمربع البحث والحدود)
+        }
+        if (c3) {
+            document.documentElement.style.setProperty('--theme-c3', c3); // اللون الثالث (للتفاصيل الجانبية)
+        }
+
+        // عرض الشعار الجديد وإخفاء القديم
+        if (logo) {
+            const sidebarLogo = document.getElementById('sidebarAgencyLogo');
+            if(sidebarLogo) {
+                sidebarLogo.src = logo;
+                sidebarLogo.style.display = 'block';
+            }
+            
+            // إخفاء شعار ATLAS الافتراضي (تأكد إنك تضيف كلاس 'default-atlas-logo' لصورة الشعار القديم في الـ HTML)
+            const defaultLogos = document.querySelectorAll('.default-atlas-logo');
+            defaultLogos.forEach(el => el.style.display = 'none');
+        }
+
+        if (name) {
+            const nameEl = document.getElementById('sidebarAgencyName');
+            if(nameEl) nameEl.innerText = name;
+        }
+    });
+    </script>
 </body>
 </html>

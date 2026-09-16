@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATLAS OS - تسجيل وكالة جديدة</title>
+    
+    <!-- استدعاء مكتبة Color Thief -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
+
+    <style>
+        :root {
+            --bg-primary: #040b17;
+            --bg-secondary: #111827;
+            --text-primary: #ffffff;
+            --text-secondary: #9ca3af;
+            --accent-color: #d4af37; /* اللون الذهبي الافتراضي */
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: var(--bg-primary);
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        .onboarding-container {
+            background-color: var(--bg-secondary);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 500px;
+            border: 1px solid rgba(184, 194, 211, 0.1);
+            box-sizing: border-box;
+            margin: 20px;
+        }
+
+        h2 {
+            color: var(--text-primary);
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        p.subtitle {
+            color: var(--text-secondary);
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            color: var(--text-secondary);
+            font-size: 13px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"], input[type="url"], input[type="tel"], input[type="file"] {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(184, 194, 211, 0.1);
+            background: rgba(4, 11, 23, 0.8);
+            color: #fff;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        .color-picker-group {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        input[type="color"] {
+            -webkit-appearance: none;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 8px;
+            cursor: pointer;
+            background: none;
+        }
+        
+        input[type="color"]::-webkit-color-swatch-wrapper {
+            padding: 0;
+        }
+        
+        input[type="color"]::-webkit-color-swatch {
+            border: none;
+            border-radius: 8px;
+        }
+
+        input:focus {
+            border-color: var(--accent-color);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: var(--accent-color);
+            color: #000;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 15px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="onboarding-container">
+        <h2>تهيئة وكالة جديدة</h2>
+        <p class="subtitle">أدخل بيانات الوكالة لتخصيص مساحة العمل (ATLAS OS)</p>
+
+        <form id="agencyForm">
+            <div class="input-group">
+                <label>اسم الوكالة</label>
+                <input type="text" id="agencyName" placeholder="مثال: Aerix Travel" required>
+            </div>
+
+            <div class="input-group">
+                <label>شعار الوكالة (Logo)</label>
+                <input type="file" id="agencyLogo" accept="image/*" required>
+            </div>
+
+            <div class="input-group color-picker-group">
+                <div style="flex-grow: 1;">
+                    <label>اللون الأساسي للهوية (Primary Color)</label>
+                    <input type="text" id="colorHex" value="#d4af37" readonly style="color: var(--text-secondary); background: transparent; border: none; padding: 0;">
+                </div>
+                <input type="color" id="agencyColor" value="#d4af37">
+            </div>
+
+            <div class="input-group">
+                <label>رقم واتساب الدعم/المدير</label>
+                <input type="tel" id="whatsappNumber" placeholder="مثال: 249912345678+" required>
+            </div>
+
+            <div class="input-group">
+                <label>رابط مجموعة الواتساب (اختياري)</label>
+                <input type="url" id="whatsappGroup" placeholder="https://chat.whatsapp.com/...">
+            </div>
+
+            <button type="submit" class="submit-btn">إنشاء الوكالة وتخصيص النظام</button>
+        </form>
+    </div>
+
+    <!-- الكود البرمجي بالكامل هنا داخل الوسم الصحيح -->
+    <script>
+    const logoInput = document.getElementById('agencyLogo');
+    const colorInput = document.getElementById('agencyColor');
+    const colorHex = document.getElementById('colorHex');
+
+    // متغير عالمي لحفظ الألوان الثلاثة
+    window.extractedColors = null;
+
+    logoInput.addEventListener('change', function(event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = new Image();
+                img.src = e.target.result;
+                
+                img.onload = function() {
+                    const colorThief = new ColorThief();
+                    try {
+                        // سحب أكثر 3 ألوان انتشاراً في الشعار
+                        const palette = colorThief.getPalette(img, 3);
+                        
+                        const rgbToHex = (r, g, b) => '#' + [r, g, b].map(x => {
+                            const hex = x.toString(16);
+                            return hex.length === 1 ? '0' + hex : hex;
+                        }).join('');
+                        
+                        const c1 = rgbToHex(palette[0][0], palette[0][1], palette[0][2]);
+                        const c2 = rgbToHex(palette[1][0], palette[1][1], palette[1][2]);
+                        const c3 = rgbToHex(palette[2][0], palette[2][1], palette[2][2]);
+                        
+                        window.extractedColors = { c1, c2, c3 };
+                        
+                        colorInput.value = c1;
+                        colorHex.value = c1;
+                        document.documentElement.style.setProperty('--accent-color', c1);
+                    } catch (error) {
+                        console.error("لم نتمكن من استخراج الألوان:", error);
+                    }
+                };
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+
+    colorInput.addEventListener('input', function() {
+        colorHex.value = this.value;
+        document.documentElement.style.setProperty('--accent-color', this.value);
+    });
+
+    document.getElementById('agencyForm').addEventListener('submit', function(e) {
+        e.preventDefault(); 
+        
+        const name = document.getElementById('agencyName').value;
+        const manualColor = document.getElementById('agencyColor').value;
+        const logoFile = document.getElementById('agencyLogo').files[0];
+
+        if (logoFile) {
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                localStorage.setItem('atlas_agency_name', name);
+                localStorage.setItem('atlas_agency_logo', event.target.result);
+                
+                // حفظ الألوان الثلاثة (أو اللون اليدوي لو النظام فشل في السحب)
+                if(window.extractedColors) {
+                    localStorage.setItem('atlas_color_1', window.extractedColors.c1);
+                    localStorage.setItem('atlas_color_2', window.extractedColors.c2);
+                    localStorage.setItem('atlas_color_3', window.extractedColors.c3);
+                } else {
+                    localStorage.setItem('atlas_color_1', manualColor);
+                    localStorage.setItem('atlas_color_2', manualColor);
+                    localStorage.setItem('atlas_color_3', manualColor);
+                }
+                
+                window.location.href = 'dashboard.html';
+            };
+            reader.readAsDataURL(logoFile);
+        }
+    });
+</script>
+</body>
+</html>

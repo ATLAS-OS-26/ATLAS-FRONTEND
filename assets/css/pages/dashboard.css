@@ -108,3 +108,20 @@
 .status { padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: bold; }
 .status.pending { background-color: rgba(212, 175, 55, 0.1); color: var(--atlas-gold); }
 .status.success { background-color: rgba(46, 204, 113, 0.1); color: #2ecc71; }
+/* تلوين النص البارز (زي ATLAS OS · OPERATIONS CENTER) */
+.highlight-text, h1, h2 {
+    color: var(--theme-c1, var(--accent-color));
+}
+
+/* تلوين إطار مربع البحث */
+.search-bar-input {
+    border: 1px solid var(--theme-c2, rgba(255,255,255,0.1)) !important;
+}
+.search-bar-input:focus {
+    border-color: var(--theme-c1, var(--accent-color)) !important;
+}
+
+/* تلوين الأيقونات أو البادجات الجانبية باللون الثالث */
+.sidebar-icon, .badge {
+    color: var(--theme-c3, #9ca3af);
+}
