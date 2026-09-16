@@ -18,7 +18,7 @@
         <aside class="sidebar">
             <div class="sidebar-header" style="padding-top: 20px;">
                 <a href="dashboard.html" style="display: block; text-align: center; text-decoration: none;">
-                    <img src="assets/images/atlas-logo.png" alt="ATLAS Logo" style="max-width: 120px; height: auto; margin: 0 auto; display: block;" onerror="this.outerHTML='<h2 class=\'sidebar-brand\' style=\'color:var(--text-primary);margin:0 0 5px;font-size:24px;letter-spacing:2px;\'>ATLAS</h2><span class=\'sidebar-subtitle\' style=\'color:var(--atlas-gold);font-size:12px;\'>Aerix Travel</span>'">
+                    <img src="assets/images/atlas-logo.png" id="oldAtlasLogo"alt="ATLAS Logo" style="max-width: 120px; height: auto; margin: 0 auto; display: block;" onerror="this.outerHTML='<h2 class=\'sidebar-brand\' style=\'color:var(--text-primary);margin:0 0 5px;font-size:24px;letter-spacing:2px;\'>ATLAS</h2><span class=\'sidebar-subtitle\' style=\'color:var(--atlas-gold);font-size:12px;\'>Aerix Travel</span>'">
                 </a>
             </div>
 <!-- حاوية شعار الوكالة -->
@@ -49,6 +49,7 @@
                 </div>
                 <div class="topbar-user">
                     <span>مدير النظام</span>
+                    <span style="color: var(--accent-color); font-weight: bold;">ATLAS OS · OPERATIONS CENTER</span>
                 </div>
             </header>
 
@@ -59,6 +60,7 @@
                 <section class="dashboard-hero">
                     <div class="hero-content">
                         <span class="hero-label">ATLAS OS · OPERATIONS CENTER</span>
+                        <span style="color: var(--accent-color); font-weight: bold;">ATLAS OS · OPERATIONS CENTER</span>
                         <h1>مرحبًا بك في مركز العمليات</h1>
                         <p>إدارة عمليات وكالتك، عملائك، حجوزاتك وبياناتك من منصة واحدة.</p>
                     </div>
@@ -75,21 +77,25 @@
                 <section class="kpi-grid">
                     <div class="kpi-card">
                         <span class="kpi-label">إجمالي العملاء</span>
+                        <span style="color: var(--accent-color); font-weight: bold;">ATLAS OS · OPERATIONS CENTER</span>
                         <strong class="kpi-value">248</strong>
                         <span class="kpi-meta">+12 هذا الشهر</span>
                     </div>
                     <div class="kpi-card">
                         <span class="kpi-label">الحجوزات النشطة</span>
+                        <span style="color: var(--accent-color); font-weight: bold;">ATLAS OS · OPERATIONS CENTER</span>
                         <strong class="kpi-value">36</strong>
                         <span class="kpi-meta">8 تحتاج متابعة</span>
                     </div>
                     <div class="kpi-card">
                         <span class="kpi-label">العمليات اليوم</span>
+                        <span style="color: var(--accent-color); font-weight: bold;">ATLAS OS · OPERATIONS CENTER</span>
                         <strong class="kpi-value">17</strong>
                         <span class="kpi-meta">5 مكتملة</span>
                     </div>
                     <div class="kpi-card">
                         <span class="kpi-label">الإيرادات</span>
+                        <span style="color: var(--accent-color); font-weight: bold;">ATLAS OS · OPERATIONS CENTER</span>
                         <strong class="kpi-value">84,500</strong>
                         <span class="kpi-meta">جنيه مصري</span>
                     </div>
@@ -133,39 +139,34 @@
         const logo = localStorage.getItem('atlas_agency_logo');
         const name = localStorage.getItem('atlas_agency_name');
         const c1 = localStorage.getItem('atlas_color_1');
-        const c2 = localStorage.getItem('atlas_color_2');
-        const c3 = localStorage.getItem('atlas_color_3');
 
-        // تطبيق الألوان الثلاثة على جذور النظام
+        // 1. تطبيق اللون الجديد
         if (c1) {
-            document.documentElement.style.setProperty('--accent-color', c1); // اللون الرئيسي (للأزرار والنصوص المهمة)
-            document.documentElement.style.setProperty('--theme-c1', c1); 
-        }
-        if (c2) {
-            document.documentElement.style.setProperty('--theme-c2', c2); // اللون الثاني (لمربع البحث والحدود)
-        }
-        if (c3) {
-            document.documentElement.style.setProperty('--theme-c3', c3); // اللون الثالث (للتفاصيل الجانبية)
+            document.documentElement.style.setProperty('--accent-color', c1);
         }
 
-        // عرض الشعار الجديد وإخفاء القديم
+        // 2. عرض الشعار الجديد وإخفاء القديم
         if (logo) {
+            // إظهار الجديد
             const sidebarLogo = document.getElementById('sidebarAgencyLogo');
             if(sidebarLogo) {
                 sidebarLogo.src = logo;
                 sidebarLogo.style.display = 'block';
             }
             
-            // إخفاء شعار ATLAS الافتراضي (تأكد إنك تضيف كلاس 'default-atlas-logo' لصورة الشعار القديم في الـ HTML)
-            const defaultLogos = document.querySelectorAll('.default-atlas-logo');
-            defaultLogos.forEach(el => el.style.display = 'none');
+            // إخفاء القديم (ركز هنا)
+            const oldLogo = document.getElementById('oldAtlasLogo');
+            if(oldLogo) {
+                oldLogo.style.display = 'none';
+            }
         }
 
+        // 3. تغيير اسم الوكالة
         if (name) {
             const nameEl = document.getElementById('sidebarAgencyName');
             if(nameEl) nameEl.innerText = name;
         }
     });
-    </script>
+</script>
 </body>
 </html>
